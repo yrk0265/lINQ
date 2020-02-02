@@ -1,0 +1,39 @@
+<table class="table table-bordered table-hover table-striped">
+  <tr>
+    <!-- <th>
+      ID
+    </th> -->
+    <th>
+      Legend
+    </th>
+    <th>
+      Value
+    </th>
+    <th>
+      Month
+    </th>
+    <th>
+      
+    </th>
+  </tr>
+  <tr *ngFor="let chart of charts">
+    <!-- <td *ngIf="chart._id === EditRowID"><label [(ngModel)]="chart._id"></label></td> -->
+    <td *ngIf="chart._id === EditRowID"><input type="text" [(ngModel)]="chart.Legend"/></td>
+    <td *ngIf="chart._id === EditRowID"><input type="text" [(ngModel)]="chart.Value"/></td>
+    <td *ngIf="chart._id === EditRowID"><input type="text" [(ngModel)]="chart.Month"/></td>
+    <!-- <td *ngIf="chart._id!==EditRowID" (click)="Edit(chart._id)">{{chart._id}}</td> -->
+    <td *ngIf="chart._id!==EditRowID" (click)="Edit(chart._id)">{{chart.Legend}}</td>
+    <td *ngIf="chart._id!==EditRowID" (click)="Edit(chart._id)">{{chart.Value}}</td>
+    <td *ngIf="chart._id!==EditRowID" (click)="Edit(chart._id)">{{chart.Month}}</td>
+    <td><input type="button" value="Save" (click)="Save(chart._id)"></td>
+  </tr>
+
+
+</table>
+
+
+<div class="row">
+  <pre>
+    {{charts | json}}
+  </pre>
+</div>
